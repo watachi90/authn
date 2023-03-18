@@ -599,3 +599,66 @@ select.form-control {
 .pgn__form-control-decorator-trailing {
   right: 0 !important;
 }
+
+/***************** Personalizados *********************/
+
+.edx-cookie-banner-wrapper {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 1;
+  background-color: #285B83;
+}
+
+.edx-cookie-banner-wrapper .edx-cookie-banner .alert-dialog {
+  font-size: .95rem;
+  color: white;
+}
+
+.edx-cookie-banner-wrapper .edx-cookie-banner .policy-link {
+  color: white;
+}
+
+.edx-cookie-banner-wrapper .edx-cookie-banner .policy-link:hover {
+  color: white;
+}
+
+.pgn__tabs .nav-item.nav-link {
+  background-color: #b4b4b4;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: normal;
+}
+
+.pgn__tabs .nav-item.nav-link.active {
+  background-color: #3fa9f5;
+  border: none;
+  color: white;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.form-control {
+  border: 2px solid #3fa9f5;
+  border-radius: 0;
+}
+
+.forgot-password {
+  font-size: 0.8em;
+  color: #3fa9f5;
+  margin-bottom: 50px;
+  margin-top: -20px;
+}
+
+.btn-brand {
+  border: none;
+  background-color: #3fa9f5;
+}
+
+.extra-large-screen-top-stripe,
+.extra-medium-screen-top-stripe,
+.extra-small-screen-top-stripe{
+  display: none;
+}
