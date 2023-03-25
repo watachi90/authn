@@ -1,24 +1,18 @@
 import React, { useEffect, useState } from 'react';
-
 import { getConfig } from '@edx/frontend-platform';
 import { sendPageEvent, sendTrackEvent } from '@edx/frontend-platform/analytics';
 import { getAuthService } from '@edx/frontend-platform/auth';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
-import {
-  Icon,
-  Tab,
-  Tabs,
-} from '@edx/paragon';
-import { ChevronLeft } from '@edx/paragon/icons';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-
 import BaseComponent from '../base-component';
 import { LOGIN_PAGE, REGISTER_PAGE } from '../data/constants';
 import { getTpaHint, updatePathWithQueryParams } from '../data/utils';
 import { LoginPage } from '../login';
 import { RegistrationPage } from '../register';
 import messages from './messages';
+import { ChevronLeft } from '@edx/paragon/icons';
+import { Nav } from 'react-bootstrap';
 
 const Logistration = (props) => {
   const { intl, selectedPage } = props;
@@ -51,7 +45,7 @@ const Logistration = (props) => {
 
   const tabTitle = (
     <div className="d-flex">
-      <Icon src={ChevronLeft} className="left-icon" />
+      <ChevronLeft className="left-icon" />
       <span className="ml-2">
         {selectedPage === LOGIN_PAGE
           ? intl.formatMessage(messages['logistration.sign.in'])
@@ -62,24 +56,44 @@ const Logistration = (props) => {
 
   return (
     <BaseComponent>
+
       <div>
+        <div className="container-padre">
+          <div className="intro">
+            <div className="text-accent-a">
+              {intl.formatMessage(messages['start.learning'])}
+            </div>
+          </div>
+          <div className="img-login" />
+        </div>
+
         {institutionLogin
           ? (
-            <Tabs defaultActiveKey="" id="controlled-tab" onSelect={handleInstitutionLogin}>
-              <Tab title={tabTitle} eventKey={selectedPage === LOGIN_PAGE ? LOGIN_PAGE : REGISTER_PAGE} />
-            </Tabs>
+            <Nav variant="tabs" defaultActiveKey="" onSelect={handleInstitutionLogin}>
+              <Nav.Item>
+                <Nav.Link eventKey={selectedPage === LOGIN_PAGE ? LOGIN_PAGE : REGISTER_PAGE}>{tabTitle}</Nav.Link>
+              </Nav.Item>
+            </Nav>
           )
           : (
             <>
               {!tpa && (
-                <Tabs defaultActiveKey={selectedPage} id="controlled-tab" onSelect={handleOnSelect}>
-                  <Tab title={intl.formatMessage(messages['logistration.register'])} eventKey={REGISTER_PAGE} />
-                  <Tab title={intl.formatMessage(messages['logistration.sign.in'])} eventKey={LOGIN_PAGE} />
-                </Tabs>
+                <Nav variant="tabs" activeKey={selectedPage} onSelect={handleOnSelect} justify="start" className="my-tabs">
+                  <Nav.Item>
+                    <Nav.Link eventKey={REGISTER_PAGE}>
+                      {intl.formatMessage(messages['logistration.register'])}
+                    </Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey={LOGIN_PAGE}>
+                      {intl.formatMessage(messages['logistration.sign.in'])}
+                    </Nav.Link>
+                  </Nav.Item>
+                </Nav>
               )}
             </>
           )}
-        { key && (
+        {key && (
           <Redirect to={updatePathWithQueryParams(key)} />
         )}
         <div id="main-content" className="main-content">

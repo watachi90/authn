@@ -171,11 +171,11 @@ class LoginPage extends React.Component {
     return (
       <>
         {((!isEnterpriseLoginDisabled && isSocialAuthActive) || (isEnterpriseLoginDisabled && isInstitutionAuthActive))
-           && (
-             <div className="mt-4 mb-3 h4">
-               {intl.formatMessage(messages['login.other.options.heading'])}
-             </div>
-           )}
+          && (
+            <div className="mt-4 mb-3 h4">
+              {intl.formatMessage(messages['login.other.options.heading'])}
+            </div>
+          )}
 
         {(!isEnterpriseLoginDisabled && isSocialAuthActive) && (
           <Hyperlink className="btn btn-link btn-sm text-body p-0 mb-4" destination={this.getEnterPriseLoginURL()}>
@@ -247,18 +247,22 @@ class LoginPage extends React.Component {
           redirectUrl={this.props.loginResult.redirectUrl}
           finishAuthUrl={thirdPartyAuthContext.finishAuthUrl}
         />
+
+
         <div className="mw-xs mt-3">
           {thirdPartyAuthContext.currentProvider
-          && (
-            <ThirdPartyAuthAlert
-              currentProvider={thirdPartyAuthContext.currentProvider}
-              platformName={thirdPartyAuthContext.platformName}
-            />
-          )}
+            && (
+              <ThirdPartyAuthAlert
+                currentProvider={thirdPartyAuthContext.currentProvider}
+                platformName={thirdPartyAuthContext.platformName}
+              />
+            )}
           {this.props.loginError ? <LoginFailureMessage loginError={this.props.loginError} /> : null}
           {submitState === DEFAULT_STATE && this.state.isSubmitted ? windowScrollTo({ left: 0, top: 0, behavior: 'smooth' }) : null}
           {activationMsgType && <AccountActivationMessage messageType={activationMsgType} />}
           {this.props.resetPassword && !this.props.loginError ? <ResetPasswordSuccess /> : null}
+
+
           <Form name="sign-in-form" id="sign-in-form">
             <FormGroup
               name="emailOrUsername"
@@ -281,29 +285,34 @@ class LoginPage extends React.Component {
               errorMessage={this.state.errors.password}
               floatingLabel={intl.formatMessage(messages['login.password.label'])}
             />
-            <StatefulButton
-              name="sign-in"
-              id="sign-in"
-              type="submit"
-              variant="brand"
-              className="login-button-width"
-              state={submitState}
-              labels={{
-                default: intl.formatMessage(messages['sign.in.button']),
-                pending: '',
-              }}
-              onClick={this.handleSubmit}
-              onMouseDown={(e) => e.preventDefault()}
-            />
+
             <Link
               id="forgot-password"
               name="forgot-password"
-              className="btn btn-link font-weight-500 text-body"
+              className="forgot-password"
               to={updatePathWithQueryParams(RESET_PAGE)}
               onClick={this.handleForgotPasswordLinkClickEvent}
             >
               {intl.formatMessage(messages['forgot.password'])}
             </Link>
+
+            <div className="margin">
+              <StatefulButton
+                name="sign-in"
+                id="sign-in"
+                type="submit"
+                variant="brand"
+                className="login-button-width"
+                state={submitState}
+                labels={{
+                  default: intl.formatMessage(messages['sign.in.button']),
+                  pending: '',
+                }}
+                onClick={this.handleSubmit}
+                onMouseDown={(e) => e.preventDefault()}
+              />
+            </div>
+
             {this.renderThirdPartyAuth(providers, secondaryProviders, currentProvider, thirdPartyAuthApiStatus, intl)}
           </Form>
         </div>
