@@ -623,6 +623,10 @@ select.form-control {
   color: white;
 }
 
+.edx-cookie-banner-wrapper .edx-cookie-banner .btn.close{
+  color: white;
+}
+
 .nav-tabs  {
   border-color: #3fa9f5 !important;
 }
@@ -653,12 +657,14 @@ select.form-control {
   font-size: 0.8em;
   color: #3fa9f5;
   margin-top: -20px !important;
+  display: block;
 }
 
 .btn-brand {
   border: none;
   background-color: #3fa9f5;
   border-radius: 3px;
+  margin-top: 20px;
 }
 
 .extra-large-screen-top-stripe,
@@ -690,4 +696,37 @@ select.form-control {
   background-repeat: no-repeat;
   height: 200px;
   width: 50%;
+}
+
+.btn-brand:not(:disabled):not(.disabled):active, 
+.btn-brand:not(:disabled):not(.disabled).active, 
+.pgn__tab_more.nav-link.active .dropdown .btn-brand.dropdown-toggle:not(:disabled):not(.disabled), 
+.show > .btn-brand.dropdown-toggle,
+.btn-brand:not(:disabled):not(.disabled):hover, 
+.btn-brand:not(:disabled):not(.disabled).hover{
+  background-color: #80D5FB;
+  border-color: #80D5FB;
+}
+
+.container-padre .intro{
+  text-transform: uppercase;
+  color: #b4b4b4;
+}
+
+.container-padre .intro .text-accent-a{
+  font-weight: normal;
+  text-transform: capitalize;
+  font-size: 1.2em;
+}
+
+@media (max-width: 575px){
+  .container-padre .intro{
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .container-padre .img-login{
+    display: none;
+  }
 }
