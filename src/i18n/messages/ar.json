@@ -1,6 +1,8 @@
 {
   "start.learning": "ابدأ التعلم ",
   "with.site.name": "مع {siteName}",
+  "site.name":"{siteName}",
+  "welcome":"مرحباً",
   "complete.your.profile.1": "أكمل",
   "complete.your.profile.2": "ملفك الشخصي",
   "welcome.to.platform": "أهلا بك {username} في {siteName}",

@@ -8,10 +8,9 @@ import {
   Form,
   Hyperlink,
   Icon,
-  StatefulButton,
-  Tab,
-  Tabs,
+  StatefulButton
 } from '@edx/paragon';
+import { Nav } from 'react-bootstrap';
 import { ChevronLeft } from '@edx/paragon/icons';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
@@ -101,10 +100,17 @@ const ForgotPasswordPage = (props) => {
         </title>
       </Helmet>
       <div>
-        <Tabs activeKey="" id="controlled-tab" onSelect={(k) => setKey(k)}>
-          <Tab title={tabTitle} eventKey={LOGIN_PAGE} />
-        </Tabs>
-        { key && (
+        <Nav variant="tabs" defaultActiveKey="" onSelect={(k) => setKey(k)} justify="start" className="my-tabs">
+          <Nav.Item>
+            <Nav.Link eventKey={LOGIN_PAGE}>
+              <div className="d-inline-flex flex-wrap align-items-center">
+                <Icon src={ChevronLeft} />
+                <span className="ml-2">{intl.formatMessage(messages['sign.in.text'])}</span>
+              </div>
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
+        {key && (
           <Redirect to={updatePathWithQueryParams(key)} />
         )}
         <div id="main-content" className="main-content">

@@ -1,6 +1,8 @@
 {
   "start.learning": "Inizia a imparare",
   "with.site.name": "con {siteName}",
+  "site.name":"{siteName}",
+  "welcome":"benvenuto",
   "complete.your.profile.1": "Completata",
   "complete.your.profile.2": "Il tuo profilo",
   "welcome.to.platform": "Benvenuto in {siteName}, {username}!",

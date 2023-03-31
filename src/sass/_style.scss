@@ -638,7 +638,7 @@ select.form-control {
 
 .nav-link.active {
   background-color: #3fa9f5 !important;
-  border: none;
+  border-color: transparent !important;
   color: white !important;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -680,6 +680,7 @@ select.form-control {
 
 .intro{
   width: 50%; 
+  text-align: center;
 }
 
 .img-login {

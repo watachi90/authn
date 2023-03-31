@@ -26,11 +26,11 @@ const BaseComponent = ({ children, showWelcomeBanner }) => {
       <div className="layout">
         {/* <MediaQuery maxWidth={breakpoints.small.maxWidth - 1}>
           {authenticatedUser ? <AuthSmallLayout username={username} /> : <SmallLayout />}
-        </MediaQuery>
-        <MediaQuery minWidth={breakpoints.medium.minWidth} maxWidth={breakpoints.large.maxWidth - 1}>
-          {authenticatedUser ? <AuthMediumLayout username={username} /> : <MediumLayout />}
-        </MediaQuery>
-        <MediaQuery minWidth={breakpoints.extraLarge.minWidth} maxWidth={breakpoints.extraExtraLarge.maxWidth}>
+        </MediaQuery> */}
+        {/* <MediaQuery minWidth={breakpoints.medium.minWidth} maxWidth={breakpoints.large.maxWidth - 1}>
+          {authenticatedUser ? <AuthMediumLayout username={username} /> : <MediumLayout />} 
+        </MediaQuery> */}
+        {/* <MediaQuery minWidth={breakpoints.extraLarge.minWidth} maxWidth={breakpoints.extraExtraLarge.maxWidth}>
           {authenticatedUser ? <AuthLargeLayout username={username} /> : <LargeLayout />}
         </MediaQuery> */}
 

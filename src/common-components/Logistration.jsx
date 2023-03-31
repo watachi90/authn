@@ -8,9 +8,9 @@ import { Redirect } from 'react-router-dom';
 import BaseComponent from '../base-component';
 import { LOGIN_PAGE, REGISTER_PAGE } from '../data/constants';
 import { getTpaHint, updatePathWithQueryParams } from '../data/utils';
+import messages from './messages';
 import { LoginPage } from '../login';
 import { RegistrationPage } from '../register';
-import messages from './messages';
 import { ChevronLeft } from '@edx/paragon/icons';
 import { Nav } from 'react-bootstrap';
 
@@ -56,12 +56,12 @@ const Logistration = (props) => {
 
   return (
     <BaseComponent>
-
       <div>
         <div className="container-padre">
           <div className="intro">
+            {intl.formatMessage(messages['welcome'])}
             <div className="text-accent-a">
-              {intl.formatMessage(messages['start.learning'])}
+              {intl.formatMessage(messages['site.name'], { siteName: getConfig().SITE_NAME })}
             </div>
           </div>
           <div className="img-login" />
