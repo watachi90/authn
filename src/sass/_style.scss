@@ -703,10 +703,12 @@ select.form-control {
 .pgn__tab_more.nav-link.active .dropdown .btn-brand.dropdown-toggle:not(:disabled):not(.disabled), 
 .show > .btn-brand.dropdown-toggle,
 .btn-brand:not(:disabled):not(.disabled):hover, 
-.btn-brand:not(:disabled):not(.disabled).hover{
+.btn-brand:not(:disabled):not(.disabled).hover,
+.btn-brand.disabled, .btn-brand:disabled{
   background-color: #80D5FB;
   border-color: #80D5FB;
 }
+
 
 .container-padre .intro{
   text-transform: uppercase;
