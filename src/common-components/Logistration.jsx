@@ -80,13 +80,13 @@ const Logistration = (props) => {
               {!tpa && (
                 <Nav variant="tabs" activeKey={selectedPage} onSelect={handleOnSelect} justify="start" className="my-tabs">
                   <Nav.Item>
-                    <Nav.Link eventKey={REGISTER_PAGE}>
-                      {intl.formatMessage(messages['logistration.register'])}
+                    <Nav.Link eventKey={LOGIN_PAGE}>
+                      {intl.formatMessage(messages['logistration.sign.in'])}
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey={LOGIN_PAGE}>
-                      {intl.formatMessage(messages['logistration.sign.in'])}
+                    <Nav.Link eventKey={REGISTER_PAGE}>
+                      {intl.formatMessage(messages['logistration.register'])}
                     </Nav.Link>
                   </Nav.Item>
                 </Nav>
